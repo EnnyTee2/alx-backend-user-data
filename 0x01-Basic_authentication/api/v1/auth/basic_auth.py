@@ -10,8 +10,7 @@ from models.user import User
 
 
 class BasicAuth(Auth):
-    """
-    This class provides basic authentication
+    """ This class provides basic authentication
     """
     def extract_base64_authorization_header(self,
                                             authorization_header: str) -> str:
@@ -75,9 +74,9 @@ class BasicAuth(Auth):
             users = User.search({"email": user_email})
             if not users or users == []:
                 return None
-            for userr in users:
-                if userr.is_valid_password(user_pwd):
-                    return userr
+            for use in users:
+                if use.is_valid_password(user_pwd):
+                    return use
             return None
         except Exception:
             return None
