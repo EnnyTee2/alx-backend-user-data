@@ -41,7 +41,7 @@ class BasicAuth(Auth):
             return None
         try:
             encoded_auth = base64_authorization_header.encode('utf-8')
-            decoded_auth = base64.b64decode(encoded_auth)
+            encoded_auth = base64.b64decode(encoded_auth)
             return decoded_auth.decode('utf-8')
         except Exception:
             return None
@@ -62,8 +62,7 @@ class BasicAuth(Auth):
         pwd = decoded_base64_authorization_header[len(email) + 1:]
         return (email, pwd)
 
-    def user_object_from_credentials(self,
-                                     user_email: str,
+    def user_object_from_credentials(self, user_email: str,
                                      user_pwd: str) -> TypeVar('User'):
         """
         Return a User instance based on email and password
