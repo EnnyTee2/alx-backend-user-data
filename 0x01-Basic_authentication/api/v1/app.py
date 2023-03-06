@@ -23,7 +23,7 @@ elif AUTH_TYPE == "basic_auth":
 
 
 @app.before_request
-def bef_req():
+def filter():
     """
     Filter each request before it's handled by the proper route
     """
