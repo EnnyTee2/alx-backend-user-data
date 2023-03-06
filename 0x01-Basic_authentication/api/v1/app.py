@@ -23,7 +23,7 @@ elif AUTH_TYPE == "basic_auth":
 
 
 @app.before_request
-def bef_req():
+def filter():
     """
     Filter each request before it's handled by the proper route
     """
@@ -43,14 +43,14 @@ def bef_req():
 
 
 @app.errorhandler(404)
-def not_found(error) -> str:
+def notFound(error) -> str:
     """ Not found handler
     """
     return jsonify({"error": "Not found"}), 404
 
 
 @app.errorhandler(401)
-def unauthorized(error) -> str:
+def unAuthorized(error) -> str:
     """ Request unauthorized handler
     """
     return jsonify({"error": "Unauthorized"}), 401
