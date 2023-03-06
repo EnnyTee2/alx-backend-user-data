@@ -86,13 +86,13 @@ class BasicAuth(Auth):
         """
         Returns a User instance based on a received request
         """
-        auth_string = self.authorization_header(request)
-        if auth_string is not None:
-            header = self.extract_base64_authorization_header(auth_string)
-            if header is not None:
-                decoded = self.decode_base64_authorization_header(header)
+        Auth_header = self.authorization_header(request)
+        if Auth_header is not None:
+            token = self.extract_base64_authorization_header(Auth_header)
+            if token is not None:
+                decoded = self.decode_base64_authorization_header(token)
                 if decoded is not None:
-                    email, pwd = self.extract_user_credentials(decoded)
+                    email, pword = self.extract_user_credentials(decoded)
                     if email is not None:
-                        return self.user_object_from_credentials(email, pwd)
+                        return self.user_object_from_credentials(email, pword)
         return
