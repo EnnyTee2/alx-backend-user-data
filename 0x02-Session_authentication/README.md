@@ -1,8 +1,3 @@
-# 0x02. Session authentication
+# 0x01. Basic authentication
 
-## Learning Objectives
-* What authentication means
-* What session authentication means
-* What Cookies are
-* How to send Cookies
-* How to parse Cookies
+In this project, I learned what the authentication process means and implemented a Basic Authentication on a simple API.
