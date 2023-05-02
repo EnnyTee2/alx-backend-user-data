@@ -78,7 +78,7 @@ class DB:
             None
         """
         try:
-            usr = self.find_user_by(id=user_id)
+            user = self.find_user_by(id=user_id)
         except NoResultFound:
             raise ValueError()
         for key, value in kwargs.items():
