@@ -1,4 +1,4 @@
-#!/user/bin/env python3
+#!/usr/bin/env python3
 """
 Simple Flask app
 """
@@ -20,7 +20,7 @@ AUTH = Auth()
 @app.route("/", methods=["GET"], strict_slashes=False)
 def index() -> str:
     """
-    Return json respomse
+    Return json response
     {"message": "Bienvenue"}
     """
     return jsonify({"message": "Bienvenue"})
