@@ -163,6 +163,6 @@ class Auth:
             raise ValueError()
 
         hash = _hash_password(password)
-        self._db.update_user(userObj.id, 
+        self._db.update_user(userObj.id,
                              hashed_password=hash,
                              reset_token=None)
