@@ -65,7 +65,7 @@ class DB:
                     return user
         raise NoResultFound
 
-    def update_user(user_id: int, **kwargs) -> None:
+    def update_user(self, user_id: int, **kwargs) -> None:
         """
         Updates multiple user records with the arguments passed
         using they key and values
