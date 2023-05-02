@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
+
 """
 Definition of _hash_password function
 """
