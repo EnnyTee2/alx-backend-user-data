@@ -30,7 +30,7 @@ def _hash_password(password: str) -> bytes:
 class Auth:
     """Auth class to interact with the authentication database.
     """
-    
+
     def __init__(self):
         self._db = DB()
 
