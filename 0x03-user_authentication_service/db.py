@@ -64,3 +64,26 @@ class DB:
                 if getattr(user, key) == value:
                     return user
         raise NoResultFound
+
+    def update_user(user_id: int, **kwargs) -> None:
+        """
+        Updates multiple user records with the arguments passed
+        using they key and values
+        Args:
+            user_id (int): user id
+            kwargs (dict): a dictionary of arbitrary keyword args
+                            representing the attributes and values to
+                            put in them
+        Return:
+            None
+        """
+        try:
+            usr = self.find_user_by(id=user_id)
+        except NoResultFound:
+            raise ValueError()
+        for key, value in kwargs.items():
+            if hasattr(user, key):
+                setattr(user, key, value)
+            else:
+                raise ValueError()
+        self._session.commit()
