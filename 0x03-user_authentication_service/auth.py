@@ -115,7 +115,7 @@ class Auth:
             return None
 
         return userObj
-    
+
     def destroy_session(self, user_id: int) -> None:
         """
         Takes a user_id and destroys that user's session, then updates their
@@ -133,7 +133,7 @@ class Auth:
 
     def get_reset_password_token(self, email: str) -> str:
         """
-        Generates a reset token uuid for a user identified by the specified email
+        Generates a reset token uuid for a user identified by the email
         Args:
             email (str): user's email address
         Return:
@@ -163,4 +163,6 @@ class Auth:
             raise ValueError()
 
         hash = _hash_password(password)
-        self._db.update_user(userObj.id, hashed_password=hash, reset_token=None)
+        self._db.update_user(userObj.id, 
+                             hashed_password=hash,
+                             reset_token=None)
