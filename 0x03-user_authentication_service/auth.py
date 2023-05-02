@@ -88,7 +88,7 @@ class Auth:
         Return:
                The created session_id, if user
                is found else return None
-        
+
         """
         try:
             user = self._db.find_user_by(email=email)
